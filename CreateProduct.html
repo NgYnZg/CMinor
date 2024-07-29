@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Create Stock</h2>
+        <form id="createForm">
+            <label for="createStockName">Stock Name:</label>
+            <input type="text" id="createStockName" name="stockName" required><br><br>
+            <label for="createStockQuantity">Stock Quantity:</label>
+            <input type="text" id="createStockQuantity" name="stockQuantity" required><br><br>
+            <label for="createExpiryDate">Expiry Date:</label>
+            <input type="date" id="createExpiryDate" name="expiryDate" required><br><br>
+            <label for="createSupplier">Supplier:</label>
+            <input type="text" id="createSupplier" name="supplier" required><br><br>
+            <label for="createStockPrice">Stock Price:</label>
+            <input type="text" id="createStockPrice" name="stockPrice" required><br><br>
+            <label for="createCategory">Category:</label>
+            <input type="text" id="createCategory" name="category" required><br><br>
+            <label for="createLatestIntakeDate">Latest Intake Date:</label>
+            <input type="date" id="createLatestIntakeDate" name="latestIntakeDate" required><br><br>
+            <label for="createAlertThreshold">Alert Threshold:</label>
+            <input type="text" id="createAlertThreshold" name="alertThreshold" required><br><br>
+            <div class="button-container">
+                <input type="button" value="Create Stock" onclick="submitCreateForm()">
+                <input type="button" value="Cancel" class="cancel-button" id="cancelCreateProduct">
+            </div>
+        </form>
+    </div>
+    <script>
+        function submitCreateForm() {
+            const form = document.getElementById('createForm');
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            google.script.run.withSuccessHandler(() => {
+                alert('Stock created successfully!');
+            }).createProduct(data);
+        }
+    </script>
+</body>
+
+</html>

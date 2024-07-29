@@ -1,0 +1,176 @@
+<div class="show-title">
+    Manage Stocks
+</div>
+<div class="report-container">
+    <div class="report-header">
+        <h1 class="recent-Articles"></h1>
+        <button id="addNew" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addModal">Add
+            New</button>
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-bs-backdrop="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addForm">
+                        <div class="form-group">
+                            <label for="stockName">Stock Name</label>
+                            <input type="text" class="form-control" id="stockName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockQuantity">Stock Quantity</label>
+                            <input type="number" class="form-control" id="stockQuantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="date" class="form-control" id="expiryDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockLevel">Alert Threshold</label>
+                            <input type="number" class="form-control" id="threshold" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="supplier">Supplier</label>
+                            <input type="text" class="form-control" id="supplier" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockPrice">Stock Price</label>
+                            <input type="number" step="0.01" class="form-control" id="stockPrice" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <input type="text" class="form-control" id="category" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="latestIntakeDate">Latest Intake Date</label>
+                            <input type="date" class="form-control" id="latestIntakeDate" required>
+                        </div>
+                        <div class="pt-3 flex">
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-bs-backdrop="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="form-group">
+                            <label for="stockId">Stock ID</label>
+                            <input type="text" class="form-control" id="stockId-Edit" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockName">Stock Name</label>
+                            <input type="text" class="form-control" id="stockName-Edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockQuantity">Stock Quantity</label>
+                            <input type="number" class="form-control" id="stockQuantity-Edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="date" class="form-control" id="expiryDate-Edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockLevel">Alert Threshold</label>
+                            <input type="number" class="form-control" id="threshold-Edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="supplier">Supplier</label>
+                            <input type="text" class="form-control" id="supplier-Edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockPrice">Stock Price</label>
+                            <input type="number" step="0.01" class="form-control" id="stockPrice-Edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <input type="text" class="form-control" id="category-Edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="latestIntakeDate">Latest Intake Date</label>
+                            <input type="date" class="form-control" id="latestIntakeDate-Edit" required>
+                        </div>
+                        <div class="pt-3 flex">
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="QRModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">QR Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <div style="width: 50%">
+                        <img style="width: 100%;"
+                            src="https://qrcode.tec-it.com/API/QRCode?data=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbzEoAJAN8o5sT-9AbmOKv8bT6TscaQK8_m-KJ14r1m6%2Fdev%3Fid%3D1 "
+                            alt="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="p-3">
+        <table id="myTable" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Stock ID</th>
+                    <th>Stock Name</th>
+                    <th>Stock Quantity</th>
+                    <th>Expiry Date</th>
+                    <th>Supplier</th>
+                    <th>Stock Price</th>
+                    <th>Category</th>
+                    <th>Latest Intake Date</th>
+                    <th>Alert Threshold</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Stock ID</th>
+                    <th>Stock Name</th>
+                    <th>Stock Quantity</th>
+                    <th>Expiry Date</th>
+                    <th>Supplier</th>
+                    <th>Stock Price</th>
+                    <th>Category</th>
+                    <th>Latest Intake Date</th>
+                    <th>Alert Threshold</th>
+                    <th>Actions</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
