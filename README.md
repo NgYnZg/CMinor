@@ -22,27 +22,6 @@ Welcome to **C Management**! This project aims to streamline stock management fo
 3. **View Stock List**: Check the table for all stock items and their details. 📊
 4. **Generate QR Code**: Open the QR code modal to view and download QR codes for your stock items. 📲
 
-## 📸 Screenshots
-
-Here’s a glimpse of what the application looks like:
-
-**Manage Stocks Page**:
-![Manage Stocks](https://via.placeholder.com/800x400?text=Manage+Stocks)
-
-**Add Stock Modal**:
-![Add Stock](https://via.placeholder.com/800x400?text=Add+Stock+Modal)
-
-**Edit Stock Modal**:
-![Edit Stock](https://via.placeholder.com/800x400?text=Edit+Stock+Modal)
-
-**QR Code Modal**:
-![QR Code](https://via.placeholder.com/800x400?text=QR+Code+Modal)
-
-## 🚀 Getting Started
-
-**Clone the Repository**:
-    ```bash
-    git clone https://github.com/your-username/c-management.git
 
 
 We hope this tool makes inventory management easier for SMEs in Malaysia. Thank you for checking out our project, and best of luck in the hackathon! 🏆🎉
